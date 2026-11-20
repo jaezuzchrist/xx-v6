@@ -265,9 +265,14 @@
   }
 
   async function load() {
-    const [proj_, team_, ...logs] = await Promise.all([get('data/projects.json'), get('data/team.json'), ...SOURCES.map(([, u]) => get(u))]);
-    team = team_ && Array.isArray(team_.members) ? team_ : null;
+    const [proj_, team_, wait_, ...logs] = await Promise.all([get('data/projects.json'), get('data/team.json'), get('data/waiting.json'), ...SOURCES.map(([, u]) => get(u))]);
     projects = Array.isArray(proj_) ? proj_ : [];
+    team = team_ && Array.isArray(team_.members) ? team_ : null;
+    // waiting.json (XX's file) wins over the "waiting" field in projects.json: [{"project":"xx-v5","text":"…"}]
+    if (Array.isArray(wait_)) {
+      projects.forEach(p => delete p.waiting);
+      wait_.forEach(w => { if (!w || !w.text) return; let p = projects.find(x => x.id === w.project); if (!p) { p = { id: w.project || 'ops', name: w.project || 'General' }; projects.push(p); } p.waiting = p.waiting ? p.waiting + ' · ' + w.text : String(w.text); });
+    }
     entries = []; const missing = [];
     logs.forEach((arr, i) => {
       const who = SOURCES[i][0];

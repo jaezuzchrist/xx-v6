@@ -7,5 +7,5 @@
  {"id":"xx-v3","name":"WebShocker","desc":"Chess & poker.","status":"Live","live":"https://xx-v3.xxbot.workers.dev","repo":"https://github.com/jaezuzchrist/xx-v3"},
  {"id":"agentic-studio","name":"Agentic Studio","desc":"XX's project (details in XX's logs).","status":"–"},
  {"id":"carguys","name":"CarGuys","desc":"Car database idea built on JPJ registration data.","status":"Idea"},
- {"id":"ops","name":"Team & ops","desc":"Bots, setup, questions answered, planning and admin.","status":"Ongoing"}
+ {"id":"ops","name":"Admin & ops","desc":"Bots, setup, questions answered, planning and admin.","status":"Ongoing"}
 ]
