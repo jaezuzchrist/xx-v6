@@ -10,6 +10,7 @@ const MON = { Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6, Jul:7, Aug:8, Sep:9, Oct
 
 // First match wins, so the order matters.
 const RULES = [
+  ['xx-v1', /Renamed brand Crew Type/i],
   ['xx-v5', /what's done on xx-v5|improve the site further|visuals vs brand/i],
   ['ops',   /summary of all|team-tracker|Mission Control|task tracker|task log|Telegram bot|GitHub renames|highest potential|shared background|Answered boss questions/i],
   ['xx-v6', /xx-v6|HQ dashboard/i],

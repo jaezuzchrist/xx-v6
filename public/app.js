@@ -1,11 +1,14 @@
 // HQ dashboard. Data: data/projects.json + one log file per bot. Routes: #/ (overview), #/p/<id> (project).
 (() => {
-  const SOURCES = [['XX', 'data/xx.json'], ['ZZ', 'data/zz.json']];
+  // [default author, file, optional]. history.json is XX's merged full history (commits, old tracker); optional.
+  const SOURCES = [['XX', 'data/xx.json'], ['ZZ', 'data/zz.json'], ['XX', 'data/history.json', true]];
   const SHOW = 5;
   const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const MONS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const $ = s => document.querySelector(s);
-  const state = { who: 'all', q: '', open: new Set(), expanded: new Set() };
+  const state = { who: 'all', q: '', open: new Set(), expanded: new Set(), oldest: false, code: false };
+  const isCode = e => e.kind === 'commit' || e.who === 'commit';
+  const whoCls = w => 'who w-' + String(w).replace(/[^a-z0-9]/gi, '');
   let projects = [], entries = [], team = null, loadErr = '';
 
   const get = url => fetch(url, { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null);
@@ -52,7 +55,7 @@
     return m && bal(m[1]) ? [m[1].trim(), m[2].trim()] : [t, ''];
   };
 
-  const filtered = () => entries.filter(e =>
+  const filtered = () => entries.filter(e => (state.code || !isCode(e) || location.hash.startsWith('#/p/')) &&
     (state.who === 'all' || e.who === state.who) &&
     (!state.q || (e.text + ' ' + (e.out || '') + ' ' + proj(e.project).name).toLowerCase().includes(state.q)));
 
@@ -62,7 +65,7 @@
     t.title = e.notime ? 'Time not recorded' : ago(e.ts);
     const b = el('div', 'body');
     const r1 = el('div', 'row1');
-    r1.append(el('span', 'who ' + e.who, e.who));
+    r1.append(el('span', whoCls(e.who), e.who === 'commit' ? 'code' : e.who));
     if (showProject) r1.append(link(proj(e.project).name, '#/p/' + encodeURIComponent(e.project), 'ptag'));
     b.append(r1);
 
@@ -93,10 +96,15 @@
   // Render a list grouped under day headers.
   function timeline(list, showProject) {
     const frag = document.createDocumentFragment();
-    let day = '', ul;
+    let day = '', mon = '', ul;
     const counts = {}; list.forEach(e => { const k = dayKey(e.ts); counts[k] = (counts[k] || 0) + 1; });
+    const months = new Set(list.map(e => dayKey(e.ts).slice(0, 7)));
     list.forEach(e => {
-      const k = dayKey(e.ts);
+      const k = dayKey(e.ts), mk = k.slice(0, 7);
+      if (months.size > 1 && mk !== mon) {
+        mon = mk; const d = myt(e.ts);
+        frag.append(el('div', 'month', ['January','February','March','April','May','June','July','August','September','October','November','December'][d.getUTCMonth()] + ' ' + d.getUTCFullYear()));
+      }
       if (k !== day) {
         day = k;
         const h = el('div', 'day', dayLabel(e.ts));
@@ -207,7 +215,10 @@
   }
 
   function project(v, id) {
-    const p = proj(id), items = filtered().filter(e => e.project === id);
+    const p = proj(id), mine = filtered().filter(e => e.project === id);
+    const codeN = mine.filter(isCode).length;
+    let items = state.code ? mine : mine.filter(e => !isCode(e));
+    if (state.oldest) items = items.slice().reverse();
     const cr = el('p', 'crumb'); cr.append(link('← Overview', '#/'));
     v.append(cr);
     const ph = el('div', 'phead'); ph.append(el('h1', null, p.name));
@@ -221,14 +232,40 @@
     if (links.children.length) v.append(links);
     if (p.waiting) { v.append(el('h2', null, 'Waiting on you')); const c = el('div', 'card'); c.append(el('p', 'txt', p.waiting)); v.append(c); }
 
-    const xx = items.filter(e => e.who === 'XX').length, zz = items.length - xx;
-    v.append(el('h2', null, `Updates · ${items.length}${items.length ? ` (XX ${xx} · ZZ ${zz})` : ''}`));
+    // story header: when it started, how much, who
+    const allP = entries.filter(e => e.project === id);
+    if (allP.length) {
+      const first = allP[allP.length - 1], last = allP[0], by = {};
+      allP.forEach(e => { const w = isCode(e) ? 'code' : e.who; by[w] = (by[w] || 0) + 1; });
+      const st = el('div', 'nums story');
+      const days = Math.max(1, Math.round((new Date(last.ts) - new Date(first.ts)) / 864e5) + 1);
+      [[dayLabel(first.ts), 'started'], [ago(last.ts), 'last active'], [String(allP.length), 'updates'], [days + (days === 1 ? ' day' : ' days'), 'from first to latest']]
+        .forEach(([n, l]) => { const d = el('div', 'num'); d.append(el('b', null, n), el('span', null, l)); st.append(d); });
+      v.append(st);
+      const who = el('p', 'byline'); who.append('By: ');
+      Object.entries(by).sort((x, y) => y[1] - x[1]).forEach(([w, n], i) => { if (i) who.append(' · '); who.append(el('span', whoCls(w === 'code' ? 'commit' : w), w), ' ' + n); });
+      v.append(who);
+    }
+
+    const head = el('div', 'thead');
+    head.append(el('h2', null, `History · ${items.length}`));
+    const tools = el('div', 'seg');
+    [['Newest first', false], ['From the beginning', true]].forEach(([l, val]) => {
+      const b = el('button', state.oldest === val ? 'on' : '', l); b.onclick = () => { state.oldest = val; render(); }; tools.append(b);
+    });
+    head.append(tools);
+    if (codeN) {
+      const t = el('label', 'tog'); const cb = el('input'); cb.type = 'checkbox'; cb.checked = state.code;
+      cb.onchange = () => { state.code = cb.checked; render(); };
+      t.append(cb, ` Show code changes (${codeN})`); head.append(t);
+    }
+    v.append(head);
     const c = el('div', 'card');
     if (!items.length) { c.append(el('p', 'empty', state.q || state.who !== 'all' ? 'Nothing matches.' : 'No updates yet.')); v.append(c); return; }
     const showAll = state.open.has(id) || state.q;
     c.append(timeline(showAll ? items : items.slice(0, SHOW)));
     if (items.length > SHOW && !state.q) {
-      const b = el('button', 'more', showAll ? 'Show less' : `See more · ${items.length - SHOW} older updates`);
+      const b = el('button', 'more', showAll ? 'Show less' : `See more · ${items.length - SHOW} ${state.oldest ? 'later' : 'older'} updates`);
       b.onclick = () => { showAll ? state.open.delete(id) : state.open.add(id); render(); if (showAll) v.scrollIntoView(); };
       c.append(b);
     }
@@ -274,10 +311,13 @@
       wait_.forEach(w => { if (!w || !w.text) return; let p = projects.find(x => x.id === w.project); if (!p) { p = { id: w.project || 'ops', name: w.project || 'General' }; projects.push(p); } p.waiting = p.waiting ? p.waiting + ' · ' + w.text : String(w.text); });
     }
     entries = []; const missing = [];
+    // history.json already contains everything in xx.json, so use one or the other
+    const hasHist = Array.isArray(logs[2]);
     logs.forEach((arr, i) => {
       const who = SOURCES[i][0];
-      if (!Array.isArray(arr)) { missing.push(who); return; }
-      arr.forEach(e => { if (e && e.ts && !isNaN(new Date(e.ts))) entries.push({ ...e, who: e.who || who, project: e.project || 'ops', text: String(e.text || '') }); });
+      if (hasHist && i === 0) return;
+      if (!Array.isArray(arr)) { if (!SOURCES[i][2]) missing.push(who); return; }
+      arr.forEach(e => { if (e && e.ts && !isNaN(new Date(e.ts))) entries.push({ ...e, who: e.who || e.by || who, project: e.project || 'ops', text: String(e.text || '') }); });
     });
     entries.sort((a, b) => new Date(b.ts) - new Date(a.ts));
     loadErr = missing.length ? `Couldn't load updates from ${missing.join(' and ')}.` : '';

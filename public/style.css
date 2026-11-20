@@ -85,6 +85,21 @@ h2{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media (max-width:520px){.remote{display:grid;grid-template-columns:1fr 1fr}.rbtn{justify-content:flex-start}}
 
+/* story */
+.month{font:600 15px Manrope,sans-serif;color:var(--ink);margin:30px 0 0;padding-top:14px;border-top:1px solid var(--line2)}
+.month:first-child{margin-top:8px;border-top:0;padding-top:4px}
+.byline{color:var(--muted);font-size:14px;margin:10px 0 0}
+.byline .who{margin-right:2px}
+.thead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:34px 0 12px}
+.thead h2{margin:0;margin-right:auto}
+.seg{display:inline-flex;border:1px solid var(--line2);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:7px 12px;font-size:13px;font-weight:600;color:var(--muted)}
+.seg button.on{background:var(--ink);color:var(--bg)}
+.tog{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--soft);cursor:pointer}
+.tog input{accent-color:var(--zz);width:16px;height:16px}
+
+@media (max-width:520px){.nums.story{display:grid;grid-template-columns:1fr 1fr}.nums.story .num b{font-size:17px}}
+
 /* team */
 .mem h3{font-size:17px}
 .mem h3 .who{font-size:12px;vertical-align:2px;margin-right:4px}
@@ -112,7 +127,9 @@ h2{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color
 .body{min-width:0;overflow-wrap:anywhere}
 .row1{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:3px}
 .who{display:inline-block;font:600 11px/1.6 var(--mono);padding:0 7px;border-radius:5px;color:#0B0F17}
-.who.XX{background:var(--xx)}.who.ZZ{background:var(--zz)}
+.who.XX,.w-XX{background:var(--xx)}.who.ZZ,.w-ZZ{background:var(--zz)}
+.w-Boss{background:#C9A7FF}.w-Claws,.w-XClaw,.w-YClaw,.w-ZClaw{background:#F28C8C}.w-commit{background:#3A475C;color:#C9D3DF}
+.who[class*=' w-']{color:#0B0F17}.who.w-commit{color:#C9D3DF}
 .ptag{font:12px var(--mono);color:var(--muted)}
 .ptag:hover{color:var(--zz)}
 .txt{color:var(--ink);font-size:15.5px;line-height:1.6}
