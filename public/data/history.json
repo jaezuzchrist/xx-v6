@@ -13,10 +13,9 @@
   "project": "ops",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
+  "text": "Installed Claude Code CLI 2.1.283 (`C:\\Users\\User\\.local\\bin`, added to user PATH) and Bun 1.4.2 (`C:\\Users\\User\\.bun\\bin`) for the Telegram channel. Token not handled by the butler; user enters it in the terminal.",
   "link": "",
-  "notime": true,
-  "private": true
+  "notime": true
  },
  {
   "ts": "2026-09-28T00:00:00+08:00",
@@ -41,40 +40,36 @@
   "project": "ops",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
+  "text": "Installed the Telegram plugin and saved the bot token to `~/.claude/channels/telegram/.env`. Access policy is still the default (pairing). Next step: pair your own account, then lock it to an allowlist.",
   "link": "",
-  "notime": true,
-  "private": true
+  "notime": true
  },
  {
   "ts": "2026-09-28T00:00:00+08:00",
   "project": "ops",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
+  "text": "Re-saved the Telegram bot token (same as before). Still waiting to pair your account. See `~/.claude/channels/telegram/.env`.",
   "link": "",
-  "notime": true,
-  "private": true
+  "notime": true
  },
  {
   "ts": "2026-09-28T00:00:00+08:00",
   "project": "ops",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
+  "text": "Telegram bot token was out of date (401); saved the new one for @xx_claudebot and backed up the old file · ~/.claude/channels/telegram/.env (backup in _archive/)",
   "link": "",
-  "notime": true,
-  "private": true
+  "notime": true
  },
  {
   "ts": "2026-09-28T00:00:00+08:00",
   "project": "ops",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
+  "text": "Telegram reconnected with new token; paired Telegram user 1895209683 (code 466cba) to @xx_claudebot · ~/.claude/channels/telegram/access.json",
   "link": "",
-  "notime": true,
-  "private": true
+  "notime": true
  },
  {
   "ts": "2026-09-28T00:00:00+08:00",
@@ -110,10 +105,9 @@
   "project": "ops",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
+  "text": "Allowlisted Telegram group -5216326373 (mention-only, only user 1895209683 can instruct); test message sent · ~/.claude/channels/telegram/access.json",
   "link": "",
-  "notime": true,
-  "private": true
+  "notime": true
  },
  {
   "ts": "2026-09-28T00:00:00+08:00",
@@ -293,9 +287,8 @@
   "project": "agentic-studio",
   "by": "XClaw",
   "kind": "claws",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "X-002 · Share Telegram config + group/bot/mention rules + streaming setting (secrets redacted) — CLOSED 15:36",
+  "link": ""
  },
  {
   "ts": "2026-09-29T15:36:00+08:00",
@@ -310,9 +303,8 @@
   "project": "agentic-studio",
   "by": "YClaw",
   "kind": "claws",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Y-002 · Apply config fix (streaming off, allowlist incl. 8604501723, mention on) + AGENTS.md team block — CLOSED 16:05 (superseded)",
+  "link": ""
  },
  {
   "ts": "2026-09-29T15:40:00+08:00",
@@ -868,10 +860,9 @@
   "project": "xx-v1",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "notime": true,
-  "private": true
+  "text": "Results dashboard live: D1 crew-type-db, Worker API (/api/event, /api/stats + ADMIN_KEY secret), /admin page; site moved to public/; toy pfps re-framed same size",
+  "link": "https://jae-repo.jaechern.workers.dev/admin",
+  "notime": true
  },
  {
   "ts": "2026-10-01T00:00:00+08:00",
@@ -968,10 +959,9 @@
   "project": "xx-v1",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
+  "text": "Crew Map live (/c/<id>, start/join from result, family mix/balance/pairs/missing piece; copy X-026/Y-031/Z-026); team retake all ISTJ (X-027/Y-032/Z-027); Mission Control v2 (status lights, refresh, 60s auto, seconds, time used, tokens); ops menu on /team + /admin; team crew https://jae-repo.jaechern.workers.dev/c/9ds36sup (owner key in .crew-keys) · projects/personality-test-site/",
   "link": "",
-  "notime": true,
-  "private": true
+  "notime": true
  },
  {
   "ts": "2026-10-01T00:00:00+08:00",
@@ -1476,36 +1466,32 @@
   "project": "agentic-studio",
   "by": "XClaw",
   "kind": "claws",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "X-027 · Retake Crew Type test as yourself (32 ratings) + report tokens — CLOSED 15:53 ✅ ISTJ (17-27-19-79)",
+  "link": ""
  },
  {
   "ts": "2026-10-01T15:52:11+08:00",
   "project": "agentic-studio",
   "by": "YClaw",
   "kind": "claws",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Y-032 · Retake Crew Type test as yourself (32 ratings) + report tokens — CLOSED 15:52 ✅ ISTJ (15-27-15-73), was INTJ",
+  "link": ""
  },
  {
   "ts": "2026-10-01T15:52:11+08:00",
   "project": "agentic-studio",
   "by": "ZClaw",
   "kind": "claws",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Z-027 · Retake Crew Type test as yourself (32 ratings) + report tokens — CLOSED 15:52 ✅ ISTJ (19-27-44-83)",
+  "link": ""
  },
  {
   "ts": "2026-10-01T15:57:05+08:00",
   "project": "xx-v1",
   "by": "commit",
   "kind": "commit",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Crew Map (group links + shared crew page), Mission Control v2 (status lights, refresh, seconds, tokens), ops menu",
+  "link": "https://github.com/jaezuzchrist/xx-v1/commit/c285854"
  },
  {
   "ts": "2026-10-01T15:59:30+08:00",
@@ -2227,9 +2213,8 @@
   "project": "xx-v1",
   "by": "commit",
   "kind": "commit",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Mission Control: drop the tokens column and stat (Claw cards show Done today instead); note how work log times are recorded",
+  "link": "https://github.com/jaezuzchrist/xx-v1/commit/a4a93db"
  },
  {
   "ts": "2026-10-02T15:10:57+08:00",
@@ -2300,9 +2285,8 @@
   "project": "xx-v1",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Site upgrade built on branch site (not live): shared menu + footer, /worlds + 6 world pages, /teams, /about, home teaser hub (doors + Type of the day), Mission Control tokens removed + log times, /admin v2 analytics; merged + reviewed zz's /types + analytics; handed to zz for review · projects/personality-test-site (branch site ae02ac8)",
+  "link": ""
  },
  {
   "ts": "2026-10-02T15:22:51+08:00",
@@ -2325,9 +2309,8 @@
   "project": "xx-v1",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Released site upgrade (main 2533bcc): menu + footer, /types + 16 profiles (zz), /worlds + 6, /teams, /about, home teaser hub, analytics v2 tracking (zz) + /admin v2, Mission Control tokens removed + log times; zz ran the DB migration; all 17 routes + stats API live-verified",
+  "link": "https://jae-repo.jaechern.workers.dev"
  },
  {
   "ts": "2026-10-02T15:35:07+08:00",
@@ -3518,18 +3501,16 @@
   "project": "xx-v2",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Boss connected Cloudflare; live at https://jae-repo-v2.jaechern.workers.dev (pages 200, API waits for the ADMIN_KEY secret); asked boss to set the key himself · Telegram 1100",
+  "link": ""
  },
  {
   "ts": "2026-10-07T10:57:37+08:00",
   "project": "xx-v2",
   "by": "commit",
   "kind": "commit",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Team tracker: live link, ADMIN_KEY step for boss",
+  "link": "https://github.com/jaezuzchrist/xx-v2/commit/d70ba2e"
  },
  {
   "ts": "2026-10-07T10:57:49+08:00",
@@ -3584,9 +3565,8 @@
   "project": "xx-v2",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "On boss \"merge\": main → c4631af (zz /admin + fixes), live in ~5s; boss then said \"don't execute, just discuss\" (10s later) → no more changes; offered roll back. ADMIN_KEY still not on the live Worker (0 secrets). Proposed a 3D 'business map' view from the boss's reference image (discussion only) · Telegram 1127",
+  "link": ""
  },
  {
   "ts": "2026-10-07T11:13:57+08:00",
@@ -3745,9 +3725,8 @@
   "project": "xx-v2",
   "by": "commit",
   "kind": "commit",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Open demo mode: no login while ADMIN_KEY is not set (boss request)",
+  "link": "https://github.com/jaezuzchrist/xx-v2/commit/98f555e"
  },
  {
   "ts": "2026-10-07T12:10:41+08:00",
@@ -4994,9 +4973,8 @@
   "project": "xx-v2",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Installed uv + NVIDIA SkillSpector v2.12.0 (Python 3.12, ~/.local/bin) on boss's OK; offline scan (--no-llm) of Telegram plugin, productivity plugin, ~/.claude/skills, OPC + Crewmate code: no malware, all HIGH findings checked by hand (node_modules coverage gaps, expected .env/API use, false positives); note: Telegram plugin's MCP SDK unpinned (1.27.1) · Telegram 1490",
+  "link": ""
  },
  {
   "ts": "2026-10-09T16:49:27+08:00",
@@ -7033,9 +7011,8 @@
   "project": "xx-v2",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Checked team dashboards: xx-v1/team (Mission Control) + xx-v2/team (Control Tower) live; saved ADMIN_KEY (Oct 1) now 401 on xx-v1, likely lost in 20 Oct rename; asked boss to set new ADMIN_KEY secret in CF; last team sync Thu 12 Nov · Telegram",
+  "link": ""
  },
  {
   "ts": "2026-11-20T10:54:00+08:00",
@@ -7114,17 +7091,15 @@
   "project": "xx-v6",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "HQ lock verified live (secret seen; wrong pw, data and home all 401 without login); pushing full history.json + waiting.json to xx-v6",
+  "link": "https://xx-v6.xxbot.workers.dev"
  },
  {
   "ts": "2026-11-20T11:40:00+08:00",
   "project": "ops",
   "by": "XX",
   "kind": "log",
-  "text": "Private entry (hidden while HQ uses a simple password)",
-  "link": "",
-  "private": true
+  "text": "Boss chose password 000000 for HQ (advised against; he sets HQ_PASSWORD himself, ZZ builds page + 5-try lockout). Added weak-lock filter to export-history.js: 46/874 sensitive lines hidden (--full restores); waiting.json contract item dropped; asked ZZ to filter zz.json · Telegram",
+  "link": ""
  }
 ]
