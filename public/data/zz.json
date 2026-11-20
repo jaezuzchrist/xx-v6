@@ -1,0 +1,8 @@
+[
+ {"ts":"2026-11-20T11:05:00+08:00","project":"xx-v6","text":"Sample: built the HQ dashboard (project cards, latest 5 per project, see more, XX/ZZ filter, search)","link":"https://xx-v6.xxbot.workers.dev"},
+ {"ts":"2026-11-19T06:28:00+08:00","project":"xx-v5","text":"Sample: 3D hero orb live after XX's review","out":"commit 97f2fe8","link":"https://xx-v5.xxbot.workers.dev"},
+ {"ts":"2026-11-19T05:53:00+08:00","project":"xx-v5","text":"Sample: Virtuo Studio name + serif headings live","link":""},
+ {"ts":"2026-10-21T13:18:00+08:00","project":"xx-v4","text":"Sample: added Nothing brand logo","link":"https://xx-v4.xxbot.workers.dev"},
+ {"ts":"2026-10-05T14:01:00+08:00","project":"xx-v1","text":"Sample: Crew Sim live","link":""},
+ {"ts":"2026-10-02T00:00:00+08:00","project":"ops","text":"Sample: set up the ZZ Telegram bot","notime":true}
+]

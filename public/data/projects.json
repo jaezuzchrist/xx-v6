@@ -1,0 +1,11 @@
+[
+ {"id":"xx-v5","name":"Virtuo Studio","desc":"AI creative production studio for sales agents. Main business site.","status":"Live · draft","live":"https://xx-v5.xxbot.workers.dev","repo":"https://github.com/jaezuzchrist/xx-v5"},
+ {"id":"xx-v6","name":"HQ","desc":"This dashboard. Private board for the boss, XX and ZZ.","status":"Building","live":"https://xx-v6.xxbot.workers.dev","repo":"https://github.com/jaezuzchrist/xx-v6"},
+ {"id":"xx-v4","name":"PhoneCompare","desc":"Phone comparison site: true-scale phones, Shopee prices, device pages.","status":"Live","live":"https://xx-v4.xxbot.workers.dev","repo":"https://github.com/jaezuzchrist/xx-v4"},
+ {"id":"xx-v1","name":"Crewmate","desc":"Personality test: 16 types, 6 worlds, crew maps, BM + 中文. Hosts Mission Control.","status":"Live","live":"https://xx-v1.xxbot.workers.dev","repo":"https://github.com/jaezuzchrist/xx-v1"},
+ {"id":"xx-v2","name":"OPC Control Tower","desc":"Agent control tower demo with API, login and controls.","status":"Live · demo","live":"https://xx-v2.xxbot.workers.dev","repo":"https://github.com/jaezuzchrist/xx-v2"},
+ {"id":"xx-v3","name":"WebShocker","desc":"Chess & poker.","status":"Live","live":"https://xx-v3.xxbot.workers.dev","repo":"https://github.com/jaezuzchrist/xx-v3"},
+ {"id":"agentic-studio","name":"Agentic Studio","desc":"XX's project (details in XX's logs).","status":"–"},
+ {"id":"carguys","name":"CarGuys","desc":"Car database idea built on JPJ registration data.","status":"Idea"},
+ {"id":"ops","name":"Team & ops","desc":"Bots, setup, questions answered, planning and admin.","status":"Ongoing"}
+]
