@@ -229,7 +229,8 @@
     const links = el('div', 'links');
     if (safeUrl(p.live)) links.append(ext('Open site ↗', p.live, 'btn'));
     if (safeUrl(p.repo)) links.append(ext('Code ↗', p.repo, 'btn'));
-    links.append(rbtn('📊', 'Status', 'HQ: status ' + p.id), rbtn('👀', 'Show me', 'HQ: show me ' + p.id));
+    links.append(rbtn('📊', 'Status', 'HQ: status ' + p.id));
+    if (safeUrl(p.live)) links.append(rbtn('👀', 'Show me', 'HQ: show me ' + p.id));
     if (links.children.length) v.append(links);
     if (p.waiting) { v.append(el('h2', null, 'Waiting on you')); const c = el('div', 'card'); c.append(el('p', 'txt', p.waiting)); v.append(c); }
 
