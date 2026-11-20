@@ -1,0 +1,42 @@
+[
+ {
+  "project": "xx-v6",
+  "text": "Turn on Cloudflare Access (your email only), then say \"lock on\" so the real logs can go in"
+ },
+ {
+  "project": "xx-v5",
+  "text": "Pick a logo (shortlist: Aperture 12/08, 07 Porous orb, 01 Halo)"
+ },
+ {
+  "project": "xx-v5",
+  "text": "WhatsApp number for the contact button (replaces the dead form)"
+ },
+ {
+  "project": "xx-v5",
+  "text": "Produce the 3 showreel videos on Nadou"
+ },
+ {
+  "project": "xx-v5",
+  "text": "Approve which past results can be shown (Track record section is hidden until then)"
+ },
+ {
+  "project": "xx-v5",
+  "text": "Prices OK? FAQ terms (cancellation, payment); BM/中文 versions?"
+ },
+ {
+  "project": "xx-v1",
+  "text": "Set a new ADMIN_KEY secret on the xx-v1 worker (old key stopped working after the rename)"
+ },
+ {
+  "project": "xx-v1",
+  "text": "Get a fluent BM + 中文 speaker to check the 32 translated questions"
+ },
+ {
+  "project": "xx-v4",
+  "text": "Apply for the Shopee Affiliate Open API, then add the App ID/Secret to Cloudflare yourself"
+ },
+ {
+  "project": "ops",
+  "text": "Say \"go\" on the PC auto-start + private GitHub repo for this workspace"
+ }
+]
