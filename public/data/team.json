@@ -1,0 +1,13 @@
+{
+ "members": [
+  {"id":"Boss","name":"Boss","role":"Decides, approves, pays","does":["Picks direction, designs and names","Gives the OK to push, send or spend","Handles passwords, keys and money","Produces Nadou videos"]},
+  {"id":"XX","name":"XX","role":"Ops, research and review","does":["Plans and research","Task list and logs","Reviews every build at 375px and for speed","Data and exports","Cloudflare and GitHub admin","Answers general questions","Logos and brand graphics"]},
+  {"id":"ZZ","name":"ZZ","role":"Build and design","does":["Builds the sites (xx-v1 to v6): pages, layout, 3D and motion","Site UI fixes","Reviews XX's work"]}
+ ],
+ "rules": [
+  "You name one of us, only that one acts",
+  "No name: the role above decides; the other only adds something new",
+  "Jobs over ~5 min start with \"Taking: …\"; the first to post owns it",
+  "Nothing goes live without the other's review; nothing is sent, paid or deleted without your OK"
+ ]
+}
