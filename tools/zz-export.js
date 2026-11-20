@@ -27,7 +27,7 @@ const scrub = s => s
   .replace(/\+?6?01\d[- ]?\d{3,4}[- ]?\d{4}/g, '[phone]');
 
 // Lines that stay off HQ while it uses a simple password (same filter as XX's history.json).
-const PRIVATE = /zetrix|non-compete|employment|employer|RM ?25k|salary|commission|clawback|.env|token|access.json|admin[_ -]?key|password|secret|-100d{7,}|-50d{8}|pairing|allowlist/i;
+const PRIVATE = /zetrix|non-compete|employment|employer|RM ?25k|salary|commission|clawback|\.env\b|token|access\.json|admin[_ -]?key|password|secret|-100\d{7,}|-50\d{8}|pairing|allowlist/i;
 
 const items = [];
 for (const raw of fs.readFileSync(src, 'utf8').split(/\r?\n/)) {
