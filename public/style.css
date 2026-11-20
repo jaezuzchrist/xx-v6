@@ -133,6 +133,7 @@ h2{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color
 .ptag{font:12px var(--mono);color:var(--muted)}
 .ptag:hover{color:var(--zz)}
 .txt{color:var(--ink);font-size:15.5px;line-height:1.6}
+.txt.priv{color:var(--faint);font-style:italic}
 .txt strong{font-weight:600}
 .txt .det{color:var(--muted)}
 .entry.wait{grid-template-columns:150px 1fr;align-items:baseline}

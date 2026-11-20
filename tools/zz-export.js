@@ -26,6 +26,9 @@ const scrub = s => s
   .replace(/[\w.+-]+@[\w-]+\.[\w.]+/g, '[email]')
   .replace(/\+?6?01\d[- ]?\d{3,4}[- ]?\d{4}/g, '[phone]');
 
+// Lines that stay off HQ while it uses a simple password (same filter as XX's history.json).
+const PRIVATE = /zetrix|non-compete|employment|employer|RM ?25k|salary|commission|clawback|.env|token|access.json|admin[_ -]?key|password|secret|-100d{7,}|-50d{8}|pairing|allowlist/i;
+
 const items = [];
 for (const raw of fs.readFileSync(src, 'utf8').split(/\r?\n/)) {
   const m = raw.match(/^- \w{3} (\d{1,2}) (\w{3}) (\d{4})\s*(~?\d{1,2}:\d{2}(?::\d{2})?)?\s*(?:ZZ:|·\s*ZZ\s*·|·)?\s*(.+)$/);
@@ -46,6 +49,7 @@ for (const raw of fs.readFileSync(src, 'utf8').split(/\r?\n/)) {
   const item = { ts, project, text: scrub(text), link };
   if (where && !/^https?:\/\/\S+$/.test(where.trim())) item.out = scrub(where.trim());
   if (!time) item.notime = true;
+  if (PRIVATE.test(raw)) { item.text = 'Private entry (hidden while HQ uses a simple password)'; item.link = ''; delete item.out; item.private = true; }
   items.push(item);
 }
 items.sort((a, b) => b.ts.localeCompare(a.ts));

@@ -69,6 +69,7 @@
     if (showProject) r1.append(link(proj(e.project).name, '#/p/' + encodeURIComponent(e.project), 'ptag'));
     b.append(r1);
 
+    if (e.private) { b.append(el('div', 'txt priv', '🔒 Private entry')); li.append(t, b); return li; }
     const [head, detail] = split(e.text);
     const txt = el('div', 'txt');
     hl(txt.appendChild(el('strong')), head);
