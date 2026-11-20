@@ -1,13 +1,17 @@
 {
  "members": [
-  {"id":"Boss","name":"Boss","role":"Decides, approves, pays","does":["Picks direction, designs and names","Gives the OK to push, send or spend","Handles passwords, keys and money","Produces Nadou videos"]},
-  {"id":"XX","name":"XX","role":"Ops, research and review","does":["Plans and research","Task list and logs","Reviews every build at 375px and for speed","Data and exports","Cloudflare and GitHub admin","Answers general questions","Logos and brand graphics"]},
-  {"id":"ZZ","name":"ZZ","role":"Build and design","does":["Builds the sites (xx-v1 to v6): pages, layout, 3D and motion","Site UI fixes","Reviews XX's work"]}
+  {"id":"Boss","name":"Boss","role":"Direction, final say, money","does":["Sets direction and makes the final picks","Money and passwords","OKs anything sent to clients or posted publicly","Clears \"Waiting on you\" once a day (~10 min)"]},
+  {"id":"XX","name":"XX","role":"Run + know","does":["Planning, task list, logs and HQ data","Reviews everything ZZ ships: code (375px, speed) and outreach/content for compliance (BNM/SC/FIMM ad rules, PDPA, AI labels)","Market research: who to target and why, competitors, pricing","Cloudflare and GitHub admin","Answers the boss's general questions first"]},
+  {"id":"ZZ","name":"ZZ","role":"Look + grow","does":["All sites and all design, incl. logos","Client pipeline: named lead lists, outreach drafts, posts, ad creatives, landing pages (drafts until the boss OKs)","Client work before site polish","Reviews XX's research and plans","Answers \"show me\" and design questions"]}
  ],
  "rules": [
-  "You name one of us, only that one acts",
-  "No name: the role above decides; the other only adds something new",
-  "Jobs over ~5 min start with \"Taking: …\"; the first to post owns it",
-  "Nothing goes live without the other's review; nothing is sent, paid or deleted without your OK"
- ]
+  "The boss never names us. Whoever it fits by role takes it: clients or how it looks → ZZ; running or knowing things → XX.",
+  "The owner posts \"Taking: …\" first. The other replies only if it's actually theirs or has something new.",
+  "Unclear whose? XX answers first and hands over or splits it in that same message.",
+  "Shared job? The owner posts the split, the other confirms, then both start.",
+  "Research first: XX's target brief before ZZ builds lead lists.",
+  "Nothing is sent, paid, deleted or posted without the boss's OK.",
+  "xx-v4, xx-v5 and xx-v6 are auto-push (XX reviews every push); other repos need the boss's OK."
+ ],
+ "agreed": "2026-11-20T13:54:00+08:00"
 }
